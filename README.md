@@ -13,9 +13,9 @@ Tested And Validated On
 
 TODO: Include usage patterns of any providers or recipes.
 
-### docker-host::default
+### Recipe docker-host::default
 
-Include `docker-host` in your run_list.
+Include `docker-host` in your run_list to install docker.
 
 ```json
 {
@@ -23,6 +23,21 @@ Include `docker-host` in your run_list.
     "recipe[docker-host::default]"
   ]
 }
+```
+
+### Library docker_env
+
+Use `docker_env` to configure a container from attributes/databags/vaults.
+
+```ruby
+docker_container 'drone' do
+  repo 'drone/drone'
+  tag 'latest'
+  port '80:8000'
+  env docker_env(node['test']['env']['drone']['config'], ['supersecret'], 'vault_env')
+  restart_policy 'always'
+  sensitive true
+end
 ```
 
 ## Testing
