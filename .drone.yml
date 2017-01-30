@@ -1,0 +1,11 @@
+pipeline:
+  style:
+    image: jmccann/drone-chefdk:1.1.16
+    commands:
+      - cookstyle
+      - foodcritic -f any .
+
+  unit_testing:
+    image: jmccann/drone-chefdk:1.1.16
+    commands:
+      - rspec
