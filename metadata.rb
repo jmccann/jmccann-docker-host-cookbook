@@ -8,7 +8,7 @@ source_url       'https://github.com/jmccann/docker-host-cookbook'
 issues_url       'https://github.com/jmccann/docker-host-cookbook/issues'
 version          '0.2.0'
 
-depends 'chef-vault', '~> 1.3'
+depends 'chef-vault', '~> 2.1'
 depends 'docker', '~> 2.9'
 
 supports 'ubuntu', '>= 16.04'
