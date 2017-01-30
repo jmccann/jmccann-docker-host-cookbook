@@ -1,12 +1,12 @@
 #
-# Cookbook Name:: docker-host
+# Cookbook Name:: jmccann-docker-host
 # Spec:: env
 #
 # Copyright (c) 2017 Jacob McCann, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'docker-host::env' do
+describe 'jmccann-docker-host::env' do
   context 'When all attributes are default, on ubuntu' do
     cached(:chef_run) do
       runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04') do |_node, server|

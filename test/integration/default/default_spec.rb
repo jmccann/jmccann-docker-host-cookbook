@@ -1,4 +1,4 @@
-describe 'docker-host::default' do
+describe 'jmccann-docker-host::default' do
   # Inspec examples can be found at
   # https://docs.chef.io/inspec_reference.html
 

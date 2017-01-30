@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: docker-host
+# Cookbook Name:: jmccann-docker-host
 # Recipe:: default
 #
 # Copyright (c) 2017 Jacob McCann, All Rights Reserved.
@@ -8,7 +8,7 @@ include_recipe 'chef-vault::default'
 
 # Required for aufs
 package "linux-image-extra-#{node['kernel']['release']}" do
-  only_if { node['docker-host']['docker']['service']['storage_driver'] == 'aufs' }
+  only_if { node['jmccann-docker-host']['docker']['service']['storage_driver'] == 'aufs' }
 end
 
 # Required for devicemapper storage driver
@@ -18,12 +18,12 @@ docker_installation_script 'default' do
 end
 
 docker_installation_tarball 'default' do
-  version node['docker-host']['docker']['install']['version']
+  version node['jmccann-docker-host']['docker']['install']['version']
   only_if { ['debian', 'ubuntu'].include?(node['platform']) }
 end
 
 docker_service_manager 'default' do
-  node['docker-host']['docker']['service'].each do |k, v|
+  node['jmccann-docker-host']['docker']['service'].each do |k, v|
     send(k, v)
   end
 

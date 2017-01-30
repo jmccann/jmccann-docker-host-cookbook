@@ -1,4 +1,4 @@
-# docker-host
+# jmccann-docker-host
 
 Utilizes the docker cookbook libraries to install a docker host.
 
@@ -13,14 +13,14 @@ Tested And Validated On
 
 TODO: Include usage patterns of any providers or recipes.
 
-### Recipe docker-host::default
+### Recipe jmccann-docker-host::default
 
-Include `docker-host` in your run_list to install docker.
+Include `jmccann-docker-host` in your run_list to install docker.
 
 ```json
 {
   "run_list": [
-    "recipe[docker-host::default]"
+    "recipe[jmccann-docker-host::default]"
   ]
 }
 ```

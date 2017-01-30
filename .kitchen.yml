@@ -14,5 +14,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[docker-host::default]
+      - recipe[jmccann-docker-host::default]
     attributes:

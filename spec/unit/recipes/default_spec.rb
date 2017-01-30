@@ -1,12 +1,12 @@
 #
-# Cookbook Name:: docker-host
+# Cookbook Name:: jmccann-docker-host
 # Spec:: default
 #
 # Copyright (c) 2017 Jacob McCann, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'docker-host::default' do
+describe 'jmccann-docker-host::default' do
   context 'When all attributes are default, on ubuntu' do
     cached(:chef_run) do
       runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '16.04')
@@ -35,7 +35,7 @@ describe 'docker-host::default' do
     cached(:chef_run) do
       runner = ChefSpec::ServerRunner.new(platform: 'redhat', version: '7.2') do |node, _server|
         # Need devicemapper for centos
-        node.override['docker-host']['docker']['service']['storage_driver'] = 'devicemapper'
+        node.override['jmccann-docker-host']['docker']['service']['storage_driver'] = 'devicemapper'
       end
       runner.converge(described_recipe)
     end
