@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2017 Jacob McCann, All Rights Reserved.
 
-# include_recipe 'drone::_gen_docker_certs' if node['drone']['generate_certs']
+include_recipe 'chef-vault::default'
 
 # Required for aufs
 package "linux-image-extra-#{node['kernel']['release']}" do
