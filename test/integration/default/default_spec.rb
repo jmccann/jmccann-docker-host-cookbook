@@ -8,9 +8,9 @@ describe 'jmccann-docker-host::default' do
     expect(service('docker')).to be_running
   end
 
-  it 'installs version 1.12.6' do
+  it 'installs correct version' do
     expect(command('docker version').exit_status).to eq 0
-    expect(command('docker version').stdout).to include('1.12.6')
+    expect(command('docker version').stdout).to include('17.05.0')
   end
 
   it 'uses aufs storage driver' do

@@ -9,6 +9,6 @@ issues_url       'https://github.com/jmccann/jmccann-docker-host-cookbook/issues
 version          '0.3.0'
 
 depends 'chef-vault', '~> 2.1'
-depends 'docker', '~> 2.9'
+depends 'docker', '~> 2.15'
 
 supports 'ubuntu', '>= 16.04'

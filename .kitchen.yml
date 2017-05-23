@@ -10,6 +10,8 @@ verifier:
 
 platforms:
   - name: ubuntu-16.04
+    run_list:
+      - recipe[chef-apt-docker::default]
 
 suites:
   - name: default
