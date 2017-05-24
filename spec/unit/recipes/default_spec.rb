@@ -18,7 +18,7 @@ describe 'jmccann-docker-host::default' do
     end
 
     it 'installs default docker version' do
-      expect(chef_run).to create_docker_installation_tarball('default').with(version: '1.12.6')
+      expect(chef_run).to create_docker_installation_package('default').with(version: '17.05.0')
     end
 
     it 'configures docker host default to socket' do
@@ -26,7 +26,6 @@ describe 'jmccann-docker-host::default' do
     end
 
     it 'configures the docker storage driver default to aufs' do
-      expect(chef_run).to install_package 'linux-image-extra-4.4.0-21-generic'
       expect(chef_run).to start_docker_service_manager('default').with(storage_driver: ['aufs'])
     end
   end
@@ -45,7 +44,7 @@ describe 'jmccann-docker-host::default' do
     end
 
     it 'installs docker' do
-      expect(chef_run).to create_docker_installation_script('default')
+      expect(chef_run).to create_docker_installation_package('default').with(version: '17.05.0')
     end
 
     it 'configures docker host default to socket' do
