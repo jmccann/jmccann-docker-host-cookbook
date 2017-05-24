@@ -5,7 +5,10 @@ module ChefDocker
   #
   module Env
     def docker_env(parent_attr, secret_keys = nil, vault = nil)
-      env = parent_attr.map { |k, v| "#{k.upcase}=#{v}" }
+      env = parent_attr.map do |k, v|
+        v = v.to_json if v.is_a?(Hash)
+        "#{k.upcase}=#{v}"
+      end
 
       if !secret_keys.nil? && !vault.nil?
         secret_keys.each do |item|

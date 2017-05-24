@@ -26,6 +26,7 @@ describe 'jmccann-docker-host::env' do
     it 'loads env from attributes' do
       expect(docker_env).to include('SOMETHING=test')
       expect(docker_env).to include('NEXT=test2')
+      expect(docker_env).to include('JSON={"file":{"path":"/path/to/file"}}')
     end
 
     it 'loads secret from attributes' do
