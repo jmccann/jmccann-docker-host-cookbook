@@ -14,7 +14,7 @@ describe 'jmccann-docker-host::default' do
     end
 
     before do
-      stub_command("docker info | grep 'Storage Driver: aufs'").and_return false
+      stub_command("docker info | grep 'Storage Driver: overlay2'").and_return false
     end
 
     it 'converges successfully' do
@@ -29,8 +29,8 @@ describe 'jmccann-docker-host::default' do
       expect(chef_run).to start_docker_service_manager('default').with(host: ['unix:///var/run/docker.sock'])
     end
 
-    it 'configures the docker storage driver default to aufs' do
-      expect(chef_run).to start_docker_service_manager('default').with(storage_driver: ['aufs'])
+    it 'configures the docker storage driver default' do
+      expect(chef_run).to start_docker_service_manager('default').with(storage_driver: ['overlay2'])
     end
   end
 

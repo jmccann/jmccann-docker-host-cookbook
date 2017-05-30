@@ -13,7 +13,7 @@ describe 'jmccann-docker-host::default' do
     expect(command('docker version').stdout).to include('17.05.0')
   end
 
-  it 'uses aufs storage driver' do
-    expect(command('docker info').stdout).to include('Storage Driver: aufs')
+  it 'uses correct storage driver' do
+    expect(command('docker info').stdout).to include('Storage Driver: overlay2')
   end
 end
