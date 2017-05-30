@@ -13,6 +13,10 @@ describe 'jmccann-docker-host::default' do
       runner.converge(described_recipe)
     end
 
+    before do
+      stub_command("docker info | grep 'Storage Driver: aufs'").and_return false
+    end
+
     it 'converges successfully' do
       chef_run # This should not raise an error
     end
@@ -37,6 +41,10 @@ describe 'jmccann-docker-host::default' do
         node.override['jmccann-docker-host']['docker']['service']['storage_driver'] = 'devicemapper'
       end
       runner.converge(described_recipe)
+    end
+
+    before do
+      stub_command("docker info | grep 'Storage Driver: devicemapper'").and_return false
     end
 
     it 'converges successfully' do
