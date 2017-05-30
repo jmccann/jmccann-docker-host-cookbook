@@ -1,3 +1,6 @@
+# 1.0.2
+* Restart docker if correct storage driver isn't loaded
+
 # 1.0.1
 * Convert Hash to JSON string for ENV
 
