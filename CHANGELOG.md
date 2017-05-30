@@ -1,3 +1,6 @@
+# 2.0.0
+* Use overlay2 storage driver by default
+
 # 1.0.2
 * Restart docker if correct storage driver isn't loaded
 
