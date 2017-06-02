@@ -1,3 +1,8 @@
+# 3.0.0
+* Major bump due to env/secret handling rewrite
+* Allow reading secret from item with any key name
+* Allow merging secrets and attributes that are more then 1 level deep
+
 # 2.0.0
 * Use overlay2 storage driver by default
 

@@ -7,7 +7,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url       'https://github.com/jmccann/jmccann-docker-host-cookbook'
 issues_url       'https://github.com/jmccann/jmccann-docker-host-cookbook/issues'
 chef_version     '>= 12.0.0'
-version          '2.0.0'
+version          '3.0.0'
 
 depends 'chef-vault', '~> 2.1'
 depends 'docker', '~> 2.15'
