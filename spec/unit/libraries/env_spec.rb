@@ -26,6 +26,9 @@ describe 'jmccann-docker-host::env' do
     it 'loads env from attributes' do
       expect(docker_env).to include('SOMETHING=test')
       expect(docker_env).to include('NEXT=test2')
+    end
+
+    it 'loads json env' do
       expect(docker_env).to include('JSON={"file":{"path":"/path/to/file"}}')
     end
 
@@ -35,6 +38,14 @@ describe 'jmccann-docker-host::env' do
 
     it 'overrides secret from vault' do
       expect(docker_env).to include('SUPERSECRET=itsasecret')
+    end
+
+    it 'loads json secret' do
+      expect(docker_env).to include('LEVELONE={"leveltwo":"secret"}')
+    end
+
+    it 'merges json env and secret' do
+      expect(docker_env).to include('JSON2={"file":{"path":"/path/to/file","mode":"0600"}}')
     end
   end
 end

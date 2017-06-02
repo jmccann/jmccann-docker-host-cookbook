@@ -8,4 +8,4 @@ source_url       'https://github.com/jmccann/jmccann-docker-host-cookbook'
 issues_url       'https://github.com/jmccann/jmccann-docker-host-cookbook/issues'
 version          '0.1.0'
 
-depends 'jmccann-docker-host', '~> 1.0'
+depends 'jmccann-docker-host', '~> 2.0'
