@@ -22,7 +22,7 @@ describe 'jmccann-docker-host::default' do
     end
 
     it 'installs default docker version' do
-      expect(chef_run).to create_docker_installation_package('default').with(version: '17.05.0')
+      expect(chef_run).to create_docker_installation_package('default')
     end
 
     it 'configures docker host default to socket' do
@@ -52,7 +52,7 @@ describe 'jmccann-docker-host::default' do
     end
 
     it 'installs docker' do
-      expect(chef_run).to create_docker_installation_package('default').with(version: '17.05.0')
+      expect(chef_run).to create_docker_installation_package('default')
     end
 
     it 'configures docker host default to socket' do

@@ -8,7 +8,8 @@ describe 'jmccann-docker-host::default' do
     expect(service('docker')).to be_running
   end
 
-  it 'uses correct storage driver' do
-    expect(command('docker info').stdout).to include('Storage Driver: overlay2')
+  it 'installs correct version' do
+    expect(command('docker version').exit_status).to eq 0
+    expect(command('docker version').stdout).to include('17.03.2')
   end
 end

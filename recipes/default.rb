@@ -7,7 +7,8 @@
 include_recipe 'chef-vault::default'
 
 docker_installation_package 'default' do
-  version node['jmccann-docker-host']['docker']['install']['version'] if node['jmccann-docker-host']['docker']['install']['version']
+  package_version node['jmccann-docker-host']['docker']['install']['package_version'] unless node.to_hash.dig('jmccann-docker-host', 'docker', 'install', 'package_version').nil?
+  version node['jmccann-docker-host']['docker']['install']['version'] unless node.to_hash.dig('jmccann-docker-host', 'docker', 'install', 'version').nil?
 end
 
 docker_service_manager 'default' do

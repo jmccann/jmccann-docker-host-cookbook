@@ -11,8 +11,6 @@ Tested And Validated On
 
 ## Usage
 
-TODO: Include usage patterns of any providers or recipes.
-
 ### Recipe jmccann-docker-host::default
 
 Include `jmccann-docker-host` in your run_list to install docker.
@@ -39,6 +37,12 @@ docker_container 'drone' do
   sensitive true
 end
 ```
+
+### Docker Version
+
+You can use the `['jmccann-docker-host']['docker']['install']['version']` or
+`['jmccann-docker-host']['docker']['install']['package_version']` attributes
+to control the docker version to install.
 
 ## Testing
 
