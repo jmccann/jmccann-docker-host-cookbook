@@ -27,13 +27,13 @@ module ChefDocker
     # @note this one does not merge Arrays
     #
     def deep_merge(tgt_hash, src_hash)
-      tgt_hash.merge(src_hash) { |key, oldval, newval|
-        if oldval.kind_of?(Hash) && newval.kind_of?(Hash)
+      tgt_hash.merge(src_hash) do |_key, oldval, newval|
+        if oldval.is_a?(Hash) && newval.is_a?(Hash)
           deep_merge(oldval, newval)
         else
           newval
         end
-      }
+      end
     end
 
     def docker_env(parent_attr, secret_keys = nil, vault = nil)
